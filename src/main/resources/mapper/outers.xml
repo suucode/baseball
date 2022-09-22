@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.baseball.domain.outers.OutersDao">
+
+	<insert id="insert">
+		INSERT INTO outers(playersId, teamsId, reasonsId, createdAt)
+		VALUES(#{playersId}, #{teamsId}, #{reasonsId}, now())
+	</insert>
+
+	<select id="findAll" resultType="site.metacoding.baseball.domain.outers.OutersDao">
+		SELECT playerName, teamsId, positionsId, createdAt FROM outers
+	</select>
+
+	<update id="update">
+		
+	</update>
+
+	<delete id="deleteById">
+		DELETE FROM outers WHERE id = #{id}
+	</delete>
+
+</mapper>
